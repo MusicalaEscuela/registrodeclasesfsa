@@ -77,10 +77,52 @@
     <h1>Registro de Clase - Musicala</h1>
     <form id="registroForm">
       <label>Fecha:<input type="date" name="fecha" required></label>
-      <label>Docente:<input type="text" name="docente" required></label>
-      <label>Componente:<input type="text" name="componente"></label>
-      <label>Sede:<input type="text" name="sede"></label>
-      <label>Ciclo / Jornada:<input type="text" name="jornada"></label>
+
+      <label>Docente:
+        <select name="docente" required>
+          <option value="">Selecciona un docente</option>
+          <option value="Cata">Cata</option>
+          <option value="Alek">Alek</option>
+          <option value="Daniela">Daniela</option>
+          <option value="Natalia">Natalia</option>
+          <!-- Agrega más docentes aquí -->
+        </select>
+      </label>
+
+      <label>Componente:
+        <select name="componente" required>
+          <option value="">Selecciona un componente</option>
+          <option value="Música">Música</option>
+          <option value="Danza">Danza</option>
+          <option value="Teatro">Teatro</option>
+          <option value="Artes plásticas">Artes plásticas</option>
+          <!-- Más si aplican -->
+        </select>
+      </label>
+
+      <label>Sede:
+        <select name="sede" required>
+          <option value="">Selecciona una sede</option>
+          <option value="Padre Misericordioso A">Padre Misericordioso A</option>
+          <option value="Padre Misericordioso B">Padre Misericordioso B</option>
+          <option value="Lucero">Lucero</option>
+          <option value="Acapulco">Acapulco</option>
+          <option value="Jerusalén">Jerusalén</option>
+          <!-- Más sedes si se necesitan -->
+        </select>
+      </label>
+
+      <label>Ciclo / Jornada:
+        <select name="jornada" required>
+          <option value="">Selecciona una opción</option>
+          <option value="Ciclo 1 - Mañana">Ciclo 1 - Mañana</option>
+          <option value="Ciclo 1 - Tarde">Ciclo 1 - Tarde</option>
+          <option value="Ciclo 2 - Mañana">Ciclo 2 - Mañana</option>
+          <option value="Ciclo 2 - Tarde">Ciclo 2 - Tarde</option>
+          <!-- Personaliza según lo que manejan -->
+        </select>
+      </label>
+
       <label>Componente corporal:<textarea name="corporal"></textarea></label>
       <label>Componente técnico:<textarea name="tecnico"></textarea></label>
       <label>Componente teórico:<textarea name="teorico"></textarea></label>
@@ -88,9 +130,10 @@
       <label>Componente complementario:<textarea name="complementario"></textarea></label>
       <label>Categorías:<textarea name="categorias"></textarea></label>
       <label>Comentarios y recursos:<textarea name="comentarios"></textarea></label>
-      <label>Link Imagen:<input type="url" name="imagen"></label>
-      <label>Link Video:<input type="url" name="video"></label>
+      <label>Link Imagen:<input type="url" name="imagen" placeholder="https://..." pattern="https?://.+"></label>
+      <label>Link Video:<input type="url" name="video" placeholder="https://..." pattern="https?://.+"></label>
       <label>Tareas o proyección:<textarea name="tareas"></textarea></label>
+
       <button type="submit">Enviar Registro</button>
     </form>
     <p id="mensaje"></p>
