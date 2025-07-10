@@ -2,137 +2,193 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>Registro de Clase - Musicala</title>
+  <title>Registro de Clase - Docentes FSA</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <style>
+    :root {
+      --primary-color: #007BFF;
+      --text-color: #333;
+      --background: #f2f2f2;
+      --white: #fff;
+      --shadow: rgba(0, 0, 0, 0.1);
+    }
+
     body {
-        font-family: 'Roboto', Arial, sans-serif;
-        margin: 0;
-        padding: 0;
-        background-color: #f2f2f2;
+      font-family: 'Roboto', Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: var(--background);
+      color: var(--text-color);
     }
+
     .container {
-        max-width: 800px;
-        margin: 0 auto;
-        padding: 20px;
-        background-color: #ffffff;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        border-radius: 10px;
-        color: #333333;
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 24px;
+      background-color: var(--white);
+      box-shadow: 0 0 12px var(--shadow);
+      border-radius: 12px;
     }
+
     .logo {
-        max-width: 180px;
-        height: auto;
-        margin: 20px auto;
-        display: block;
+      max-width: 160px;
+      height: auto;
+      display: block;
+      margin: 0 auto 16px auto;
     }
+
     h1 {
-        text-align: center;
-        font-size: 28px;
-        margin-bottom: 20px;
+      text-align: center;
+      font-size: 24px;
+      margin-bottom: 24px;
     }
+
     label {
-        font-weight: bold;
-        display: block;
-        margin-top: 15px;
+      font-size: 16px;
+      margin-top: 12px;
+      margin-bottom: 4px;
+      display: block;
+      font-weight: 500;
     }
-    input, select, textarea {
-        width: 100%;
-        padding: 10px;
-        margin-top: 5px;
-        margin-bottom: 10px;
-        border-radius: 5px;
-        border: 1px solid #ccc;
-        box-sizing: border-box;
+
+    input,
+    select,
+    textarea {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 16px;
+      font-size: 15px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      box-sizing: border-box;
     }
+
+    textarea {
+      resize: vertical;
+      min-height: 60px;
+    }
+
     button {
-        background-color: #007BFF;
-        color: #ffffff;
-        border: none;
-        padding: 12px 20px;
-        border-radius: 5px;
-        cursor: pointer;
-        width: 100%;
-        font-size: 16px;
+      background-color: var(--primary-color);
+      color: var(--white);
+      border: none;
+      padding: 14px;
+      font-size: 16px;
+      border-radius: 6px;
+      cursor: pointer;
+      width: 100%;
+      transition: background-color 0.3s ease;
     }
+
     button:hover {
-        background-color: #0056b3;
+      background-color: #0056b3;
     }
+
     #mensaje {
-        margin-top: 15px;
-        font-weight: bold;
-        color: green;
+      margin-top: 16px;
+      font-weight: bold;
+      color: green;
+      text-align: center;
     }
+
     .copyright {
-        text-align: center;
-        font-size: 12px;
-        color: #555555;
-        margin-top: 30px;
+      text-align: center;
+      font-size: 13px;
+      color: #777;
+      margin-top: 32px;
     }
   </style>
 </head>
 <body>
   <div class="container">
     <img src="logo.jpg" alt="logo" class="logo">
-    <h1>Registro de Clase - Musicala</h1>
+    <h1>Registro de Clase - Docentes FSA</h1>
     <form id="registroForm">
-      <label>Fecha:<input type="date" name="fecha" required></label>
+      <label for="fecha">Fecha:</label>
+      <input type="date" name="fecha" required>
 
-      <label>Docente:
-        <select name="docente" required>
-          <option value="">Selecciona un docente</option>
-          <option value="Cata">Cata</option>
-          <option value="Alek">Alek</option>
-          <option value="Daniela">Daniela</option>
-          <option value="Natalia">Natalia</option>
-          <!-- Agrega más docentes aquí -->
-        </select>
-      </label>
+      <label for="docente">Docente:</label>
+      <select name="docente" required>
+        <option value="">Selecciona un docente</option>
+        <option value="Angie Nitola">Angie Nitola</option>
+        <option value="Brayan Sereno">Brayan Sereno</option>
+        <option value="Brenda Giraldo">Brenda Giraldo</option>
+        <option value="Catalina Amaya">Catalina Amaya</option>
+        <option value="Leydy Díaz">Leydy Díaz</option>
+        <option value="María Camila Pirajan">María Camila Pirajan</option>
+        <option value="Natalia Moreno">Natalia Moreno</option>
+        <option value="Santiago Gutiérrez">Santiago Gutiérrez</option>
+        <option value="Sergio Cifuentes">Sergio Cifuentes</option>
+        <option value="Thalia Sarmiento">Thalia Sarmiento</option>
+        <option value="Yusting Granados">Yusting Granados</option>
+      </select>
 
-      <label>Componente:
-        <select name="componente" required>
-          <option value="">Selecciona un componente</option>
-          <option value="Música">Música</option>
-          <option value="Danza">Danza</option>
-          <option value="Teatro">Teatro</option>
-          <option value="Artes plásticas">Artes plásticas</option>
-          <!-- Más si aplican -->
-        </select>
-      </label>
+      <label for="componente">Componente:</label>
+      <select name="componente" required>
+        <option value="">Selecciona un componente</option>
+        <option value="Cheerleading">Cheerleading</option>
+        <option value="Danzas">Danzas</option>
+        <option value="Dibujo">Dibujo</option>
+        <option value="Teatro">Teatro</option>
+      </select>
 
-      <label>Sede:
-        <select name="sede" required>
-          <option value="">Selecciona una sede</option>
-          <option value="Padre Misericordioso A">Padre Misericordioso A</option>
-          <option value="Padre Misericordioso B">Padre Misericordioso B</option>
-          <option value="Lucero">Lucero</option>
-          <option value="Acapulco">Acapulco</option>
-          <option value="Jerusalén">Jerusalén</option>
-          <!-- Más sedes si se necesitan -->
-        </select>
-      </label>
+      <label for="sede">Sede:</label>
+      <select name="sede" required>
+        <option value="">Selecciona una sede</option>
+        <option value="Acapulco">Acapulco</option>
+        <option value="Arroyo">Arroyo</option>
+        <option value="Betania">Betania</option>
+        <option value="GMMMC">GMMMC</option>
+        <option value="Jerusalén">Jerusalén</option>
+        <option value="Lucero">Lucero</option>
+        <option value="Padre Misericordioso A">Padre Misericordioso A</option>
+        <option value="Padre Misericordioso B">Padre Misericordioso B</option>
+        <option value="San Juan de Dios">San Juan de Dios</option>
+        <option value="Santo Domingo">Santo Domingo</option>
+      </select>
 
-      <label>Ciclo / Jornada:
-        <select name="jornada" required>
-          <option value="">Selecciona una opción</option>
-          <option value="Ciclo 1 - Mañana">Ciclo 1 - Mañana</option>
-          <option value="Ciclo 1 - Tarde">Ciclo 1 - Tarde</option>
-          <option value="Ciclo 2 - Mañana">Ciclo 2 - Mañana</option>
-          <option value="Ciclo 2 - Tarde">Ciclo 2 - Tarde</option>
-          <!-- Personaliza según lo que manejan -->
-        </select>
-      </label>
+      <label for="jornada">Ciclo / Jornada:</label>
+      <select name="jornada" required>
+        <option value="">Selecciona una opción</option>
+        <option value="Ciclo 1 - Mañana">Ciclo 1 - Mañana</option>
+        <option value="Ciclo 1 - Tarde">Ciclo 1 - Tarde</option>
+        <option value="Ciclo 2 - Mañana">Ciclo 2 - Mañana</option>
+        <option value="Ciclo 2 - Tarde">Ciclo 2 - Tarde</option>
+        <option value="Ciclo 3 - Mañana">Ciclo 3 - Mañana</option>
+        <option value="Ciclo 3 - Tarde">Ciclo 3 - Tarde</option>
+        <option value="Ciclo 4 - Mañana">Ciclo 4 - Mañana</option>
+        <option value="Ciclo 4 - Tarde">Ciclo 4 - Tarde</option>
+      </select>
 
-      <label>Componente corporal:<textarea name="corporal"></textarea></label>
-      <label>Componente técnico:<textarea name="tecnico"></textarea></label>
-      <label>Componente teórico:<textarea name="teorico"></textarea></label>
-      <label>Componente de obras:<textarea name="obras"></textarea></label>
-      <label>Componente complementario:<textarea name="complementario"></textarea></label>
-      <label>Categorías:<textarea name="categorias"></textarea></label>
-      <label>Comentarios y recursos:<textarea name="comentarios"></textarea></label>
-      <label>Link Imagen:<input type="url" name="imagen" placeholder="https://..." pattern="https?://.+"></label>
-      <label>Link Video:<input type="url" name="video" placeholder="https://..." pattern="https?://.+"></label>
-      <label>Tareas o proyección:<textarea name="tareas"></textarea></label>
+      <label for="corporal">Componente corporal:</label>
+      <textarea name="corporal"></textarea>
+
+      <label for="tecnico">Componente técnico:</label>
+      <textarea name="tecnico"></textarea>
+
+      <label for="teorico">Componente teórico:</label>
+      <textarea name="teorico"></textarea>
+
+      <label for="obras">Componente de obras:</label>
+      <textarea name="obras"></textarea>
+
+      <label for="complementario">Componente complementario:</label>
+      <textarea name="complementario"></textarea>
+
+      <label for="categorias">Categorías:</label>
+      <textarea name="categorias"></textarea>
+
+      <label for="comentarios">Comentarios y recursos:</label>
+      <textarea name="comentarios"></textarea>
+
+      <label for="imagen">Link Imagen:</label>
+      <input type="url" name="imagen" placeholder="https://...">
+
+      <label for="video">Link Video:</label>
+      <input type="url" name="video" placeholder="https://...">
+
+      <label for="tareas">Tareas o proyección:</label>
+      <textarea name="tareas"></textarea>
 
       <button type="submit">Enviar Registro</button>
     </form>
