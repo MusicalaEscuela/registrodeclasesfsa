@@ -3,45 +3,99 @@
 <head>
   <meta charset="UTF-8">
   <title>Registro de Clase - Musicala</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <style>
     body {
-      font-family: Arial, sans-serif;
-      margin: 30px;
+        font-family: 'Roboto', Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f2f2f2;
+    }
+    .container {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: #ffffff;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        border-radius: 10px;
+        color: #333333;
+    }
+    .logo {
+        max-width: 180px;
+        height: auto;
+        margin: 20px auto;
+        display: block;
+    }
+    h1 {
+        text-align: center;
+        font-size: 28px;
+        margin-bottom: 20px;
+    }
+    label {
+        font-weight: bold;
+        display: block;
+        margin-top: 15px;
     }
     input, select, textarea {
-      display: block;
-      width: 100%;
-      padding: 8px;
-      margin-bottom: 10px;
+        width: 100%;
+        padding: 10px;
+        margin-top: 5px;
+        margin-bottom: 10px;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+        box-sizing: border-box;
     }
     button {
-      padding: 10px 20px;
+        background-color: #007BFF;
+        color: #ffffff;
+        border: none;
+        padding: 12px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+        width: 100%;
+        font-size: 16px;
+    }
+    button:hover {
+        background-color: #0056b3;
+    }
+    #mensaje {
+        margin-top: 15px;
+        font-weight: bold;
+        color: green;
+    }
+    .copyright {
+        text-align: center;
+        font-size: 12px;
+        color: #555555;
+        margin-top: 30px;
     }
   </style>
 </head>
 <body>
-  <h2>Registro de Clase - Musicala</h2>
-  <form id="registroForm">
-    <label>Fecha: <input type="date" name="fecha" required></label>
-    <label>Docente: <input type="text" name="docente" required></label>
-    <label>Componente: <input type="text" name="componente"></label>
-    <label>Sede: <input type="text" name="sede"></label>
-    <label>Ciclo / Jornada: <input type="text" name="jornada"></label>
-    <label>Componente corporal: <textarea name="corporal"></textarea></label>
-    <label>Componente técnico: <textarea name="tecnico"></textarea></label>
-    <label>Componente teórico: <textarea name="teorico"></textarea></label>
-    <label>Componente de obras: <textarea name="obras"></textarea></label>
-    <label>Componente complementario: <textarea name="complementario"></textarea></label>
-    <label>Categorías: <textarea name="categorias"></textarea></label>
-    <label>Comentarios y recursos: <textarea name="comentarios"></textarea></label>
-    <label>Link Imagen: <input type="url" name="imagen"></label>
-    <label>Link Video: <input type="url" name="video"></label>
-    <label>Tareas o proyección: <textarea name="tareas"></textarea></label>
-
-    <button type="submit">Enviar</button>
-  </form>
-
-  <p id="mensaje"></p>
+  <div class="container">
+    <img src="logo.jpg" alt="logo" class="logo">
+    <h1>Registro de Clase - Musicala</h1>
+    <form id="registroForm">
+      <label>Fecha:<input type="date" name="fecha" required></label>
+      <label>Docente:<input type="text" name="docente" required></label>
+      <label>Componente:<input type="text" name="componente"></label>
+      <label>Sede:<input type="text" name="sede"></label>
+      <label>Ciclo / Jornada:<input type="text" name="jornada"></label>
+      <label>Componente corporal:<textarea name="corporal"></textarea></label>
+      <label>Componente técnico:<textarea name="tecnico"></textarea></label>
+      <label>Componente teórico:<textarea name="teorico"></textarea></label>
+      <label>Componente de obras:<textarea name="obras"></textarea></label>
+      <label>Componente complementario:<textarea name="complementario"></textarea></label>
+      <label>Categorías:<textarea name="categorias"></textarea></label>
+      <label>Comentarios y recursos:<textarea name="comentarios"></textarea></label>
+      <label>Link Imagen:<input type="url" name="imagen"></label>
+      <label>Link Video:<input type="url" name="video"></label>
+      <label>Tareas o proyección:<textarea name="tareas"></textarea></label>
+      <button type="submit">Enviar Registro</button>
+    </form>
+    <p id="mensaje"></p>
+    <p class="copyright">© 2025 Musicala. Todos los derechos de uso son propiedad de Musicala.</p>
+  </div>
 
   <script>
     const scriptURL = 'https://script.google.com/macros/s/AKfycbzEaYyJht0wZS0HvdqEK8qeBiDn07LuGhRUL4IYWMJmam6X9XAHvUQeIPC-KAqJyP2K8A/exec';
@@ -52,8 +106,8 @@
       e.preventDefault();
       const formData = new FormData(form);
       fetch(scriptURL, { method: 'POST', body: formData })
-        .then(response => mensaje.innerText = "Registro enviado con éxito ✅")
-        .catch(error => mensaje.innerText = "Error al enviar el registro ❌");
+        .then(response => mensaje.innerText = "✅ Registro enviado con éxito")
+        .catch(error => mensaje.innerText = "❌ Error al enviar el registro");
       form.reset();
     });
   </script>
