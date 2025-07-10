@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Registro de Clase - Musicala</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 30px;
+    }
+    input, select, textarea {
+      display: block;
+      width: 100%;
+      padding: 8px;
+      margin-bottom: 10px;
+    }
+    button {
+      padding: 10px 20px;
+    }
+  </style>
+</head>
+<body>
+  <h2>Registro de Clase - Musicala</h2>
+  <form id="registroForm">
+    <label>Fecha: <input type="date" name="fecha" required></label>
+    <label>Docente: <input type="text" name="docente" required></label>
+    <label>Componente: <input type="text" name="componente"></label>
+    <label>Sede: <input type="text" name="sede"></label>
+    <label>Ciclo / Jornada: <input type="text" name="jornada"></label>
+    <label>Componente corporal: <textarea name="corporal"></textarea></label>
+    <label>Componente técnico: <textarea name="tecnico"></textarea></label>
+    <label>Componente teórico: <textarea name="teorico"></textarea></label>
+    <label>Componente de obras: <textarea name="obras"></textarea></label>
+    <label>Componente complementario: <textarea name="complementario"></textarea></label>
+    <label>Categorías: <textarea name="categorias"></textarea></label>
+    <label>Comentarios y recursos: <textarea name="comentarios"></textarea></label>
+    <label>Link Imagen: <input type="url" name="imagen"></label>
+    <label>Link Video: <input type="url" name="video"></label>
+    <label>Tareas o proyección: <textarea name="tareas"></textarea></label>
+
+    <button type="submit">Enviar</button>
+  </form>
+
+  <p id="mensaje"></p>
+
+  <script>
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbzEaYyJht0wZS0HvdqEK8qeBiDn07LuGhRUL4IYWMJmam6X9XAHvUQeIPC-KAqJyP2K8A/exec';
+    const form = document.getElementById('registroForm');
+    const mensaje = document.getElementById('mensaje');
+
+    form.addEventListener('submit', e => {
+      e.preventDefault();
+      const formData = new FormData(form);
+      fetch(scriptURL, { method: 'POST', body: formData })
+        .then(response => mensaje.innerText = "Registro enviado con éxito ✅")
+        .catch(error => mensaje.innerText = "Error al enviar el registro ❌");
+      form.reset();
+    });
+  </script>
+</body>
+</html>
